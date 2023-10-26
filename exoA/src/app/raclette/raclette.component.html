@@ -1,0 +1,49 @@
+<h1 appHighlight>{{title}} </h1>
+
+<ul>
+    <li>Pommes de terre</li>
+    <li [ngStyle]="{backgroundColor:isThisIngredientVital ? 'red' : 'yellow'}">Raclette</li>
+    <li>Jambon</li>
+    <li [ngClass]="{'vital': isThisIngredientVital}">Cornichons</li>
+    <li>Chou-fleur</li>
+</ul>
+
+<button (click)="isImportant()">Higlight</button>
+
+<h1 *appDisplayGuests="isGuestListDisplayed">Guest List:</h1>
+
+<ul *appDisplayGuests="isGuestListDisplayed">
+    <li>Brenda</li>
+    <li>Dylan</li>
+    <li>Michel Drucker</li>
+    <li>Marc Aurèle</li>
+    <li>Julie</li>
+</ul>
+
+<button (click)="showGuest()">Show/Hide Guests</button>
+
+<h1>Playlist: </h1>
+
+<ul>
+    <li *ngFor="let song of songList">
+        {{song}}
+    </li>
+</ul>
+
+<h3>Challenge 03.1 Les Directives:</h3>
+
+<h3 [ngStyle]="{backgroundColor: isAdmin? 'red' : 'transparent'}">BONJOUR</h3>
+
+<button>View</button>
+<button *ngIf="isAdmin">Edit</button>
+
+<h3>Challenge 03.2, Les Customs Directives: </h3>
+
+<ul>
+    <li appShowMovies>The Godfather</li>
+    <!-- [ngClass]="{'movies': isMovieColored}" -->
+    <li>The Shawshank Redemption (1994)</li>
+    <li>Gone With the Wind (1939)</li>
+    <li>Casablanca (1942)</li>
+    <li>It's a Wonderful Life (1946)</li>
+</ul>

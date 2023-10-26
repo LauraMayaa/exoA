@@ -1,0 +1,11 @@
+<h1>Fiche de contact</h1>
+
+<img [src]="user.photo" [alt]="user.photo">
+<p>Nom: {{user.name}} </p>
+<p>Prénom: {{user.firstName}} </p>
+<p *ngIf="isShowing">Age: {{user.age}} </p>
+<p>{{user.quote}} </p>
+<input type="text" [(ngModel)]="user.quote">
+<br><br>
+
+<button (click)="Showing()">Hide/Show Age</button>
